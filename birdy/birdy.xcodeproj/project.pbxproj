@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F9192102B31F23A00FF90A1 /* TweetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F91920F2B31F23A00FF90A1 /* TweetRow.swift */; };
+		3F9192122B32001D00FF90A1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9192112B32001D00FF90A1 /* LoginView.swift */; };
 		3FE248D52B29FB280085994A /* birdyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE248D42B29FB280085994A /* birdyApp.swift */; };
 		3FE248D72B29FB280085994A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE248D62B29FB280085994A /* ContentView.swift */; };
 		3FE248D92B29FB2B0085994A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FE248D82B29FB2B0085994A /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F91920F2B31F23A00FF90A1 /* TweetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetRow.swift; sourceTree = "<group>"; };
+		3F9192112B32001D00FF90A1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3FE248D12B29FB280085994A /* birdy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = birdy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE248D42B29FB280085994A /* birdyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = birdyApp.swift; sourceTree = "<group>"; };
 		3FE248D62B29FB280085994A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,10 +58,12 @@
 			isa = PBXGroup;
 			children = (
 				3FE248D42B29FB280085994A /* birdyApp.swift */,
+				3F91920F2B31F23A00FF90A1 /* TweetRow.swift */,
 				3FE248D62B29FB280085994A /* ContentView.swift */,
 				3FE248D82B29FB2B0085994A /* Assets.xcassets */,
 				3FE248E22B2A08CC0085994A /* large-Blue-Footed-Booby-photo.jpg */,
 				3FE248DA2B29FB2B0085994A /* Preview Content */,
+				3F9192112B32001D00FF90A1 /* LoginView.swift */,
 			);
 			path = birdy;
 			sourceTree = "<group>";
@@ -143,6 +149,8 @@
 			files = (
 				3FE248D72B29FB280085994A /* ContentView.swift in Sources */,
 				3FE248D52B29FB280085994A /* birdyApp.swift in Sources */,
+				3F9192122B32001D00FF90A1 /* LoginView.swift in Sources */,
+				3F9192102B31F23A00FF90A1 /* TweetRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

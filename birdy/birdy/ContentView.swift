@@ -7,19 +7,37 @@
 
 import SwiftUI
 
+struct Tweet: Identifiable{
+    var id = UUID()
+    let userName : String
+    var content : String
+    let date : Date = Date()
+    var isFavorite: Bool
+}
+
 struct ContentView: View {
+    @State var tweet : Tweet = Tweet(userName: "Iva", content: "Evogac",  isFavorite: true)
+    @State var tweets: [Tweet]=[
+            Tweet(
+            userName: "Ivo",
+            content: "Evogac",
+            isFavorite: true
+            ),
+            Tweet(
+            userName: "ana",
+            content: "i ona je nes nap",
+            isFavorite: true
+            ),
+        ]
+        
+        @State var content: String = ""
+    @State var isPresented: Bool=false
+    @State var userName :String = ""
     
-    struct Tweet{
-        let userName : String
-        var content : String
-        let date : Date
-        
-    }
     var body: some View {
-        
-        var tweet : Tweet = Tweet(userName: "Ivo", content: "Evogac", date: DateNow)
-        
+     
         VStack{
+            
             HStack{
                 Text("Birdy")
                     .font(.title)
@@ -27,44 +45,66 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                Button(action: {}) {
-                    Text("Sign in")
-                        .foregroundColor(Color.blue)
-                }
-                
-                
-                
-            }
-            
-            
-            HStack{
-                
-                Image("bird1")
-                    .resizable()
-                    .frame(width: 55, height: 55)
-                    .clipShape(Circle())
-                
-                VStack{
-                    Text(tweet.userName)
-                    Text(tweet.content)
-                    Text(tweet.date, style: .relative)
+                if userName.isEmpty{
+                    Button(action: {
+                        isPresented=true
+                    }) {
+                        Text("Log in")
+                            .foregroundColor(Color.blue)
+                    }
                     
                 }
-                .padding(.leading)
-                Spacer()
+                else{
+                    Button(action: {
+                        isPresented=false
+                    }) {
+                        Text("Log out")
+                            .foregroundColor(Color.blue)
+                    }
+                }
+                
                 
             }
+            
+            List($tweets){tweet in
+                TweetRow(tweet: $tweet)
+            }
+            .listStyle(.plain)
             
             Spacer()
             
-            Image("bird1")
-                .resizable()
-                .frame(width: 55, height: 55)
-                .clipShape(Circle())
+            if userName.isEmpty{
+            }
+            else{
+                HStack{
+                    
+                    TextField("Content", text: $content)
+                    Spacer()
+                    
+                    Button(action:{
+                        tweets.append(Tweet(
+                            userName: "netko",
+                            content: content,
+                            isFavorite: false)
+                        )
+                        content=""
+                    }){
+                        Text("New Text")
+                    }
+                    .disabled(content.isEmpty)
+                    
+                    
+                    
+                }
+            }
             
         
         }
         .padding(15)
+        .sheet(isPresented: $isPresented) {
+            LoginView(userName : $userName, isPresented: $isPresented)
+            
+        }
     }
 }
 
