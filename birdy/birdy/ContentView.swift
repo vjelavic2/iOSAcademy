@@ -56,7 +56,7 @@ struct ContentView: View {
                 }
                 else{
                     Button(action: {
-                        isPresented=false
+                        userName=""
                     }) {
                         Text("Log out")
                             .foregroundColor(Color.blue)
